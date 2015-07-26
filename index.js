@@ -8,12 +8,12 @@ var {
   ScrollView,
   TouchableOpacity,
   PanResponder,
+  precomputeStyle,
 } = React;
 
 var DefaultTabBar = require('./DefaultTabBar');
 var deviceWidth = Dimensions.get('window').width;
 var rebound = require('rebound');
-var precomputeStyle = require('precomputeStyle');
 var TAB_BAR_REF = 'TAB_BAR';
 
 var ScrollableTabView = React.createClass({
@@ -58,12 +58,12 @@ var ScrollableTabView = React.createClass({
       onMoveShouldSetPanResponder: (e, gestureState) => {
         if (Math.abs(gestureState.dx) > Math.abs(gestureState.dy)) {
           if ((gestureState.moveX <= this.props.edgeHitWidth ||
-              gestureState.moveX >= deviceWidth - this.props.edgeHitWidth) && 
+              gestureState.moveX >= deviceWidth - this.props.edgeHitWidth) &&
                 this.props.locked !== true) {
             if(this.props.hasTouch){
               this.props.hasTouch(true);
             }
-            
+
             return true;
           }
         }
@@ -81,7 +81,7 @@ var ScrollableTabView = React.createClass({
         } else if (this.state.currentPage !== 0 && (relativeGestureDistance > 0.5 || (relativeGestureDistance > 0 && vx >= 0.5))) {
           newPage = newPage - 1;
         }
-        
+
         if(this.props.hasTouch){
           this.props.hasTouch(false);
         }

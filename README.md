@@ -68,10 +68,10 @@ var {
   Text,
   View,
   TouchableOpacity,
+  precomputeStyle,
 } = React;
 
 var deviceWidth = require('Dimensions').get('window').width;
-var precomputeStyle = require('precomputeStyle');
 var TAB_UNDERLINE_REF = 'TAB_UNDERLINE';
 
 var styles = StyleSheet.create({
