@@ -11,7 +11,7 @@ var {
 } = React;
 
 var deviceWidth = Dimensions.get('window').width;
-/var TAB_UNDERLINE_REF = 'TAB_UNDERLINE';
+var TAB_UNDERLINE_REF = 'TAB_UNDERLINE';
 
 var styles = StyleSheet.create({
   tab: {
