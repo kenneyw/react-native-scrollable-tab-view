@@ -8,7 +8,6 @@ var {
   ScrollView,
   TouchableOpacity,
   PanResponder,
-  precomputeStyle,
 } = React;
 
 var DefaultTabBar = require('./DefaultTabBar');
@@ -44,9 +43,9 @@ var ScrollableTabView = React.createClass({
         var currentValue = this._scrollSpring.getCurrentValue();
         var offsetX = deviceWidth * currentValue;
 
-        this.scrollView.setNativeProps(precomputeStyle({
+        this.scrollView.setNativeProps({style:{
           transform: [{translateX: -1 * offsetX}],
-        }));
+        }});
 
         // Pass the currentValue on to the tabBar component
         this.refs[TAB_BAR_REF].setAnimationValue(currentValue);

@@ -68,7 +68,6 @@ var {
   Text,
   View,
   TouchableOpacity,
-  precomputeStyle,
 } = React;
 
 var deviceWidth = require('Dimensions').get('window').width;
@@ -114,9 +113,9 @@ var CustomTabBar = React.createClass({
   },
 
   setAnimationValue(value) {
-    this.refs[TAB_UNDERLINE_REF].setNativeProps(precomputeStyle({
+    this.refs[TAB_UNDERLINE_REF].setNativeProps({style:{
       left: (deviceWidth * value) / this.props.tabs.length
-    }));
+    }});
   },
 
   render() {
